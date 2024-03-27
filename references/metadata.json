@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "Plasma/Wallpaper",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "f.l.velasko@gmail.com",
+                "Name": "Velasco"
+            }
+        ],
+        "Description": "Matrix like Digital Rain",
+        "Icon": "plasma",
+        "Id": "org.kde.plasma.citygrow",
+        "License": "GPLv2+",
+        "Name": "Digital Rain",
+        "Version": "0.1",
+        "Website": ""
+    },
+    "X-KDE-ParentApp": "org.kde.plasmashell"
+}
