@@ -46,11 +46,14 @@ extern crate structopt;
 use crate::structopt::StructOpt;
 
 use crate::canvas::canvas::*;
+use crate::canvas::layer::*;
 
 fn main() {
     let can_par = CanvasParser::from_args();
-    let can: Canvas<u8> = can_par.as_canvas();
+    // println!("{:?}\n", can_par);
+
+    let can = Canvas::<Layer<u8>>::parse(can_par);
     println!("{:?}", can);
 
-    println!("## Code end ##");
+    println!("\n## Code end ##");
 }
