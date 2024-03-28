@@ -1,4 +1,4 @@
-use crate::common::charset_macro::make_subset;
+use crate::utils::charset_macro::make_subset;
 
 use rand::seq::SliceRandom;
 use rand::thread_rng;

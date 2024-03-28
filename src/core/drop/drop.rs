@@ -1,7 +1,7 @@
-use crate::common::charset::CharacterSubset;
-use crate::common::coordinates::Coord;
+use crate::utils::coordinates::Coord;
 
-use crate::drop::tail::TailTrait;
+use crate::traits::drop::tail::TailTrait;
+use crate::traits::drop::DropTrait;
 
 pub struct Drop<T> {
     pos: Coord,
@@ -9,11 +9,6 @@ pub struct Drop<T> {
     height_death: Coord,
     brightness: u8,
     tail: T,
-}
-
-pub trait DropTrait {
-    type TailType: TailTrait;
-    fn new(spawn: Coord, death: Coord, brightness: u8, tail_size: usize) -> Self;
 }
 
 impl<T> DropTrait for Drop<T>

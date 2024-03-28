@@ -6,7 +6,7 @@ extern crate strum_macros;
 
 use strum_macros::EnumString;
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 pub struct Color {
     values: [u8; 4],
 }

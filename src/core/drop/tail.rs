@@ -1,16 +1,10 @@
 use std::collections::{vec_deque::Iter, VecDeque};
 
-use crate::common::charset::CharacterSubset;
+use crate::traits::drop::tail::TailTrait;
+use crate::utils::charset::CharacterSubset;
 
 pub struct Tail<C> {
     data: VecDeque<C>,
-}
-
-pub trait TailTrait {
-    type CharacterSet: CharacterSubset;
-    fn new(size: usize) -> Self;
-    fn insert(&mut self, data: Self::CharacterSet);
-    fn iter(&self) -> Iter<'_, Self::CharacterSet>;
 }
 
 impl<C> TailTrait for Tail<C>

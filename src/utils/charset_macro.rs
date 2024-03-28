@@ -2,7 +2,7 @@ macro_rules! make_subset {
     ( $x:ident, $chars:expr ) => {
         pub struct $x(char);
 
-        impl crate::common::charset::CharacterSubset for $x {
+        impl CharacterSubset for $x {
             fn parse(value: char) -> Option<Self> {
                 if $chars.contains(value) {
                     Some(Self(value))
