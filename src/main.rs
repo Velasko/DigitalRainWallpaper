@@ -18,6 +18,7 @@ use utils::charset::Katakana;
 
 lazy_static! {
     pub static ref ARGS: ArgParser = ArgParser::from_args();
+    pub static ref RNG: utils::random::Random = utils::random::Random::new();
 }
 
 fn main() {

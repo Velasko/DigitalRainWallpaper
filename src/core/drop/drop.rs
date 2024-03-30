@@ -3,7 +3,7 @@ use crate::structopt::StructOpt;
 
 use crate::traits::canvas::CanvasTrait;
 use crate::utils::{color::Color, coordinates::Coord};
-use crate::ARGS;
+use crate::{ARGS, RNG};
 
 use super::traits::{tail::TailTrait, DropTrait};
 
@@ -32,9 +32,9 @@ where
     fn make_random(canvas: &impl CanvasTrait) -> Self {
         let [x_max, y_max] = canvas.get_size().into();
 
-        let x_coord = canvas.random(0, x_max);
-        let y_spawn = canvas.exp_dist(0.5, y_max);
-        let y_death = y_max - canvas.exp_dist(0.5, y_spawn);
+        let x_coord = RNG.random(0, x_max);
+        let y_spawn = RNG.exp_dist(0.5, y_max);
+        let y_death = y_max - RNG.exp_dist(0.5, y_spawn);
 
         let drop_options = &ARGS.drop;
 
@@ -54,8 +54,8 @@ where
             brightness: 255,
             tail: T::new(3),
 
-            speed: canvas.random_pick(drop_options.drop_speeds()),
-            color_gradient: canvas.random_pick(drop_options.drop_colors()),
+            speed: RNG.random_pick(drop_options.drop_speeds()),
+            color_gradient: RNG.random_pick(drop_options.drop_colors()),
         }
     }
 }
