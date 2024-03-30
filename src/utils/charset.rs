@@ -1,7 +1,6 @@
 use crate::utils::charset_macro::make_subset;
 
 use rand::seq::SliceRandom;
-use rand::thread_rng;
 
 make_subset!(Katakana, "abcd");
 

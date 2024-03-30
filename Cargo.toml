@@ -7,11 +7,13 @@ edition = "2021"
 
 [dependencies]
 # Renderer
+derive-getters = "0.3.0"
+lazy_static = "1.4.0"
 rand = "0.8.5"
 regex = "1.10.4"
 structopt = "0.3.25"
 strum = "0.26.2"
-strum_macros="0.26.2"
+strum_macros = "0.26.2"
 # Qt
 qmetaobject = "0.2"
 cstr = "0.2"

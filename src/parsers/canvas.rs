@@ -4,14 +4,14 @@ use crate::utils::color::Color;
 #[derive(Debug, structopt::StructOpt)]
 #[structopt(name = "Canvas")]
 pub struct CanvasParser {
-    #[structopt(short = "s", long = "size", number_of_values = 2, required = true)]
+    #[structopt(short, long, number_of_values = 2, required = true)]
     size: Vec<usize>,
-
-    #[structopt(long)]
-    persistency: f32,
 
     #[structopt(long, default_value = "black")]
     bg_color: Color,
+
+    #[structopt(long, default_value = "0.5")]
+    drop_spawn_chance: f64,
 }
 
 impl CanvasParser {
@@ -21,5 +21,9 @@ impl CanvasParser {
 
     pub fn get_bg_color(&self) -> Color {
         self.bg_color.clone()
+    }
+
+    pub fn get_drop_spawn_chance(&self) -> f64 {
+        self.drop_spawn_chance
     }
 }

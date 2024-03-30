@@ -3,6 +3,7 @@ use std::collections::{vec_deque::Iter, VecDeque};
 use crate::traits::drop::tail::TailTrait;
 use crate::utils::charset::CharacterSubset;
 
+#[derive(Debug)]
 pub struct Tail<C> {
     data: VecDeque<C>,
 }

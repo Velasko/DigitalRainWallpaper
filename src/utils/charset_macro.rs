@@ -1,5 +1,6 @@
 macro_rules! make_subset {
     ( $x:ident, $chars:expr ) => {
+        #[derive(Debug)]
         pub struct $x(char);
 
         impl CharacterSubset for $x {

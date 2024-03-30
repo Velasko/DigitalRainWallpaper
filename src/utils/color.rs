@@ -1,5 +1,4 @@
 use regex::Regex;
-use std::str::FromStr;
 
 extern crate strum;
 extern crate strum_macros;
